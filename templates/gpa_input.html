@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student_info_page</title>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='gpa.css')}}">
+</head>
+<body>
+    <div class="profile">
+        <form action="/info" method="POST">
+            <h1>GPA DETAILS</h1>
+            <div class="student">
+
+                <label>Enter your name:</label>
+                <input type="text" name="s_name">
+
+                <label>Subject_1:</label>
+                <input type="text" name="subject_1">
+                <label>credit_hour_1:</label>
+                <input type="number" name="cr_1">
+                <label>Grade:</label>
+                <input type="text" name="grade_1">
+
+                <label>Subject_2:</label>
+                <input type="text" name="subject_2">
+                <label>credit_hour_2:</label>
+                <input type="number" name="cr_2">
+                <label>Grade:</label>
+                <input type="text" name="grade_2">
+
+                <label>Subject_3:</label>
+                <input type="text" name="subject_3">
+                <label>credit_hour_3:</label>
+                <input type="number" name="cr_3">
+                <label>Grade:</label>
+                <input type="text" name="grade_3">
+            </div>
+            <button>Calculate_Gpa</button>
+
+        </form>
+    </div>
+</body>
+</html>

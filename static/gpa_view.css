@@ -1,0 +1,22 @@
+@media (max-width: 500px) {
+    .show{
+        margin: auto;
+        padding: 30px;
+        box-shadow: 0 0 39px blue;
+        border-radius: 29px;
+        background-image: url("gpa_calculator.jpg");
+        background-size: cover;
+    }
+}
+.gpa{
+    width: 300px;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0 0 20px rgb(5, 73, 5);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
