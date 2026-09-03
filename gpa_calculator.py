@@ -1,5 +1,7 @@
 import pandas as pd
 import time 
+import matplotlib.pyplot as plt
+import numpy as np 
 print("..........SIMPLE GPA CALCULATOR.........")
 for  x in range (5,-1,-1):
     second = x%60
@@ -29,7 +31,7 @@ while running:
                     raise ValueError("Subject name can't be empty")
                 cr_hr = int(input(f"credit_hour_{x+1}:"))
                 grade = input(f"grade_{x+1}:").upper()
-                    
+
                 courses.append(subjects)
                 credits.append(cr_hr)
                 grades.append(grade)    
@@ -77,6 +79,13 @@ while running:
             grand = total_gpa/total_credits
 
             print(f".........FINAL_GPA = {grand}........")
+
+            c_ourses = np.array(courses)
+            g_rade_values = np.array(grade_values)
+            plt.plot(c_ourses, g_rade_values, marker= 'o', color= 'r', linewidth= 10, mfc= 'r', mec= 'y', ms= 15)
+            plt.xlabel("COURSES")
+            plt.ylabel("GRADES")
+            plt.show()
 
             if grand == 4:
                 print("🏆Marvellous")

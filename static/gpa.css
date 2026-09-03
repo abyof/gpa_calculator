@@ -15,8 +15,16 @@
 }
 input{
     display:block;
+    margin-top:6.5px;
+    box-shadow: 0 0 10px rgb(5, 73, 5);
+    border-radius: 30px;
 }
 .student{
     font-weight: bolder;
     font-family: 'Courier New', Courier, monospace;
+}
+button{
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgb(5, 73, 5);
+    border-radius: 20px;
 }

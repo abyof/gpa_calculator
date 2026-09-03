@@ -68,6 +68,7 @@ def info():
         final_gpa = total_sum / total_credits
         gpas = []
         if final_gpa == 4:
+            
             gpas.append("🏆MAGNIFICENT")
         elif 3.75 < final_gpa <4:
             gpas.append("⭐EXCELLENT")
@@ -93,3 +94,4 @@ def info():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
