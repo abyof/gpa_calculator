@@ -9,25 +9,37 @@
     <div class="show">
         <h2>GPA_INFORMATION</h2>
         <p class="s_name">Student_name: {{s_name}}</p>
-
-        <p class="sub">Subject_1: {{subject_1}}</p>
-        <p>Credit_hour_1: {{cr_1}}</p>
-        <p>Grade_1: {{grade_1}}</p>
-
-        <p class="sub">Subject_2: {{subject_2}}</p>
-        <p>Credit_hour_2: {{cr_2}}</p>
-        <p>Grade_2: {{grade_2}}</p>
-
-        <p class="sub">Subject_3: {{subject_3}}</p>
-        <p>Credit_hour_3: {{cr_3}}</p>
-        <p>Grade_3: {{grade_3}}</p>
-
+        <table>
+            <tr>
+                <th>Subjects:</th>
+                <th>Credit_hours:</th>
+                <th>Grades:</th>
+            </tr>
+            <tr>
+                <td>
+                    <p class="sub">{{subject_1}}</p>
+                    <p class="sub">{{subject_2}}</p>
+                    <p class="sub">{{subject_3}}</p>
+                </td>
+                <td>
+                    <p class="cr">{{cr_1}}</p>
+                    <p class="cr">{{cr_2}}</p>
+                    <p class="cr">{{cr_3}}</p>
+                </td>
+                <td>
+                    <p class="gr">{{grade_1}}</p>
+                    <p class="gr">{{grade_2}}</p>
+                    <p class="gr">{{grade_3}}</p>
+                </td>
+            </tr>
+        </table>
         <div class="gpa">
             <h3>Total_credits: {{total_credits}}</h3>
             <h3>Total_sum: {{total_sum}}</h3>
             <h3>Final_gpa: {{final_gpa}}</h3>
             <h3>Comment: {{gpas[0]}}</h3>
         </div>
+        <button type="button" class="back-btn" onclick="history.back()">Go back</button>
     </div>
 </body>
 
