@@ -72,30 +72,37 @@ def info():
             value = grade_value(grade)
             grade_values.append(value)
 
-        total_credits = sum(credits) 
-        total_sum = sum(c*g for c,g in zip (credits, grade_values))
-        final_gpa = total_sum / total_credits
+        def calculate_gpa(credits, grade_values):
+            total_credits = sum(credits)
+            total_sum = sum(c*g for c,g in zip (credits, grade_values))
+            final_gpa = total_sum / total_credits
+            return total_credits, total_sum, final_gpa 
+        total_credits, total_sum, final_gpa = calculate_gpa(credits, grade_values)
+        final_gpa = round(final_gpa, 2)
+    
         gpas = []
-        if final_gpa == 4:
-            
-            gpas.append("🏆MAGNIFICENT")
-        elif 3.75 < final_gpa <4:
-            gpas.append("⭐EXCELLENT")
-        elif 3.5 < final_gpa <= 3.75:
-            gpas.append("🟢VERY GOOD")
-        elif 3.2 < final_gpa <= 3.5:
-            gpas.append("😊GOOD")
-        elif 2.75 < final_gpa <= 3.2:
-            gpas.append("😐AVERAGE")
-        elif 2.5 < final_gpa <= 2.75:
-            gpas.append("📉BELOW AVERAGE")
-        elif 2 < final_gpa <= 2.5:
-            gpas.append("🔴POOR")
-        elif 1 < final_gpa <= 2:
-            gpas.append("👎VERY POOR")
-        else:
-            gpas.append("🚫FAIL")
-
+        def gpa_comment(final_gpa):
+            if final_gpa == 4:
+                return ("🏆MAGNIFICENT")
+            elif 3.75 < final_gpa <4:
+                return ("⭐EXCELLENT")
+            elif 3.5 < final_gpa <= 3.75:
+                return ("🟢VERY GOOD")
+            elif 3.2 < final_gpa <= 3.5:
+                return ("😊GOOD")
+            elif 2.75 < final_gpa <= 3.2:
+                return ("😐AVERAGE")
+            elif 2.5 < final_gpa <= 2.75:
+                return ("📉BELOW AVERAGE")
+            elif 2 < final_gpa <= 2.5:
+                return ("🔴POOR")
+            elif 1 < final_gpa <= 2:
+                return ("👎VERY POOR")
+            else:
+                return ("🚫FAIL")
+        comment = gpa_comment(final_gpa)
+        gpas.append(comment)
+        
     except (ValueError, TypeError, ZeroDivisionError):
         return "Unexpected error occured. please insert only the desired inputs."
     return render_template("gpa_jinja.html", s_name= s_name, subject_1= subject_1, cr_1= cr_1, grade_1= grade_1,
