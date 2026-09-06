@@ -1,8 +1,10 @@
 from flask import Flask, request, render_template
 app = Flask(__name__)
+
 @app.route("/")
 def home():
     return render_template("gpa_input.html")
+
 @app.route("/info", methods= ['POST'])
 def info():
     s_name = request.form.get("s_name", "")
@@ -23,45 +25,52 @@ def info():
 
         credits = []
         grades = [grade_1, grade_2, grade_3]
-        grade_values = []
 
         credit_1 = int(cr_1)
         credit_2 = int(cr_2)
         credit_3 = int(cr_3) 
 
         if credit_1 <= 0:
-            return "credit hour must be positve integer."
+            return "credit hour_1 must be a positive integer."
+        
+        elif credit_2 <= 0:
+            return "credit hour_2 must be a positive integer."
+       
+        elif credit_3 <= 0:    
+            return "credit hour_3 must be a positive integer."
         else:
             credits.append(credit_1)
-        if credit_2 <= 0:
-            return "credit hour must be positive integer."
-        else:   
             credits.append(credit_2)
-        if credit_3 <= 0:    
             credits.append(credit_3)
 
-        for grade in grades:
-
-            if grade in  ["A+", "A"]:
-                grade_values.append(4)
+        def grade_value(grade):
+            if grade in ["A+", "A"]:
+                return 4
             elif grade == "A-":
-                grade_values.append(3.75)
+                return 3.75
             elif grade == "B+":
-                grade_values.append(3.5)
+                return 3.5
             elif grade == "B":
-                grade_values.append(3)
+                return 3
             elif grade == "B-":
-                grade_values.append(2.75)
+                return 2.75
             elif grade == "C+":
-                grade_values.append(2.5)
+                return 2.5
+            elif grade == "C":
+                return 2
             elif grade == "C-":
-                grade_values.append(2)
+                return 1.75
             elif grade == "D":
-                grade_values.append(1)
+                return 1 
             elif grade == "F":
-                grade_values.append(0)
+                return 0
             else:
-                raise ValueError
+                return None
+            
+        grade_values = []
+        for grade in grades:
+            value = grade_value(grade)
+            grade_values.append(value)
 
         total_credits = sum(credits) 
         total_sum = sum(c*g for c,g in zip (credits, grade_values))
@@ -94,4 +103,3 @@ def info():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
