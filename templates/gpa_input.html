@@ -3,7 +3,7 @@
 <head>
     <title>Student_info_page</title>
     <meta charset="UTF-8"> 
-    <link rel="stylesheet" href="{{url_for('static', filename='gpa.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/gpa.css')}}">
 </head>
 <body>
     <div class="profile">
@@ -13,31 +13,33 @@
 
                 <label>Enter your name:</label>
                 <input type="text" name="s_name">
-
-                <label>Subject_1:</label>
-                <input type="text" name="subject_1">
-                <label>credit_hour_1:</label>
-                <input type="number" name="cr_1">
-                <label>Grade:</label>
-                <input type="text" name="grade_1">
-
-                <label>Subject_2:</label>
-                <input type="text" name="subject_2">
-                <label>credit_hour_2:</label>
-                <input type="number" name="cr_2">
-                <label>Grade:</label>
-                <input type="text" name="grade_2">
-
-                <label>Subject_3:</label>
-                <input type="text" name="subject_3">
-                <label>credit_hour_3:</label>
-                <input type="number" name="cr_3">
-                <label>Grade:</label>
-                <input type="text" name="grade_3">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subjects</th>
+                            <th>Credits</th>
+                            <th>Grades</th>
+                            <th></th>
+                        </tr>
+                    </thead>     
+                    <tbody id="table-body">
+                        <tr>
+                            <td><input type="text" name="subject"></td>
+                            <td><input type="number" name="credit_hour"></td>
+                            <td><input type="text" name="grade"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="subject"></td>
+                            <td><input type="number" name="credit_hour"></td>
+                            <td><input type="text" name="grade"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <button>Calculate_Gpa</button>
-
+            <button id="add">Add_row</button>
+            <script src="script/gpa_script.js" defer></script>
         </form>
     </div>
 </body>
-</html> 
+</html>

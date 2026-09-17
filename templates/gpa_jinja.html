@@ -3,7 +3,7 @@
 <head>
     <title>Gpa_display_page</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{url_for('static', filename='gpa_view.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/gpa_view.css')}}">
 </head>
 <body>
     <div class="show">
@@ -37,7 +37,7 @@
             <h3>Total_credits: {{total_credits}}</h3>
             <h3>Total_sum: {{total_sum}}</h3>
             <h3>Final_gpa: {{final_gpa}}</h3>
-            <h3>Comment: {{gpas[0]}}</h3>
+            <h3>Comment: {{comment}}</h3>
         </div>
         <button type="button" class="back-btn" onclick="history.back()">Go back</button>
     </div>

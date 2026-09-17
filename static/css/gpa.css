@@ -5,19 +5,20 @@
         padding: 30px;
         box-shadow: 0 0 20px purple;
         border-radius: 20px;
-        display: flex;
-        align-items: center;
         }
 }
-.label{
-    display: block;
-    margin-top: 20px;
+table, th, td{
+    border: 2px black;
+    border-collapse: collapse;
 }
 input{
     display:block;
     margin-top:6.5px;
     box-shadow: 0 0 10px rgb(5, 73, 5);
     border-radius: 30px;
+}
+input:focus{
+    outline: 1px solid black;
 }
 .student{
     font-weight: bolder;
@@ -27,4 +28,7 @@ button{
     margin-top: 20px;
     box-shadow: 0 0 20px rgb(5, 73, 5);
     border-radius: 20px;
+}
+body {
+    background-image: url('gpa_calculator.jfif');
 }
