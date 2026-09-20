@@ -7,18 +7,18 @@
         background-size: cover;
     }
 }
-
-.gpa{
-    width: 300px;
-    margin: auto;
-    padding: 30px;
-    box-shadow: 0 0 20px rgb(5, 73, 5);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 300px) {
+    .gpa {
+            margin: auto;
+            padding: 30px;
+            box-shadow: 0 0 20px rgb(5, 73, 5);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+        }
 }
 .sub{
     font-size: 14px;
@@ -40,4 +40,5 @@ table{
     width: 50%;
     text-align: center;
     margin-top: 20px;
+    padding: 10px;
 }

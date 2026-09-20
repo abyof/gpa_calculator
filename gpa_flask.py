@@ -65,10 +65,14 @@ def info():
 
     try:
 
+        if len(subjects) <=1 or not len(subjects) == len(credits) == len(grades):
+            return "Please fill equal subjects, credtis and grades respectively."
+
         credits = [int(credit) for credit in credits]
 
         if any(credit <= 0 for credit in credits):
             return "Credit hour must not greater than 0."
+        
         grade_values = []
 
         for grade in grades:
@@ -76,15 +80,16 @@ def info():
             if value is None:
                 return f"Invalid grade: {grade}."
             grade_values.append(value)
-
+        
         total_credits, total_sum, final_gpa = calculate_gpa(credits, grade_values)
         final_gpa = round(final_gpa, 2)
         comment = gpa_comment(final_gpa)
         
     except (ValueError, TypeError, ZeroDivisionError):
         return "Unexpected error occured. please insert only the desired inputs."
-    return render_template("gpa_jinja.html", s_name= s_name, subjects= subjects, creditS= credits, grades= grades,
+    return render_template("gpa_jinja.html", s_name= s_name, subjects= subjects, credits= credits, grades= grades,
         total_credits= total_credits, total_sum= total_sum, final_gpa= final_gpa, comment= comment)
 
 if __name__ == "__main__":
     app.run(debug=True)
+    

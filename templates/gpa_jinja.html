@@ -15,23 +15,19 @@
                 <th>Credit_hours:</th>
                 <th>Grades:</th>
             </tr>
+            {% for subject in subjects %}
             <tr>
                 <td>
-                    <p class="sub">{{subject_1}}</p>
-                    <p class="sub">{{subject_2}}</p>
-                    <p class="sub">{{subject_3}}</p>
+                    <p class="sub">{{subject}}</p>
                 </td>
                 <td>
-                    <p class="cr">{{cr_1}}</p>
-                    <p class="cr">{{cr_2}}</p>
-                    <p class="cr">{{cr_3}}</p>
+                    <p class="cr">{{credits[loop.index0]}}</p>
                 </td>
                 <td>
-                    <p class="gr">{{grade_1}}</p>
-                    <p class="gr">{{grade_2}}</p>
-                    <p class="gr">{{grade_3}}</p>
+                    <p class="gr">{{grades[loop.index0]}}</p>
                 </td>
             </tr>
+            {% endfor %}
         </table>
         <div class="gpa">
             <h3>Total_credits: {{total_credits}}</h3>

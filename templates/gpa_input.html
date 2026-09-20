@@ -25,20 +25,49 @@
                     <tbody id="table-body">
                         <tr>
                             <td><input type="text" name="subject"></td>
-                            <td><input type="number" name="credit_hour"></td>
-                            <td><input type="text" name="grade"></td>
+                            <td><input type="number" name="credit_hour" class="cr-input"></td>
+                            <td>
+                                <select name="grade" id="grade">
+                                    <option value="A+">A+</option>
+                                    <option value="A">A</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B">B</option>
+                                    <option value="B-">B-</option>
+                                    <option value="C+">C+</option>
+                                    <option value="C">C</option>
+                                    <option value="C-">C-</option>
+                                    <option value="D">D</option>
+                                    <option value="F">F</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td><input type="text" name="subject"></td>
-                            <td><input type="number" name="credit_hour"></td>
-                            <td><input type="text" name="grade"></td>
+                            <td><input type="number" name="credit_hour" class="cr-input"></td>
+                            <td>
+                                
+                                <select name="grade" id="grade">
+                                    <option value="A+">A+</option>
+                                    <option value="A">A</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B">B</option>
+                                    <option value="B-">B-</option>
+                                    <option value="C+">C+</option>
+                                    <option value="C">C</option>
+                                    <option value="C-">C-</option>
+                                    <option value="D">D</option>
+                                    <option value="F">F</option>
+                                </select>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <button>Calculate_Gpa</button>
-            <button id="add">Add_row</button>
-            <script src="script/gpa_script.js" defer></script>
+            <button type="submit">Calculate_Gpa</button>
+            <button type="button" id="add">Add_row</button>
+            <script src="{{url_for('static', filename= 'script/gpa_script.js')}}" defer></script>
         </form>
     </div>
 </body>
