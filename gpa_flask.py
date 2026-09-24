@@ -57,7 +57,6 @@ def home():
 
 @app.route("/info", methods= ['POST'])
 def info():
-    s_name = request.form.get("s_name", "")
 
     subjects = request.form.getlist("subject")
     credits = request.form.getlist("credit_hour")
@@ -87,9 +86,8 @@ def info():
         
     except (ValueError, TypeError, ZeroDivisionError):
         return "Unexpected error occured. please insert only the desired inputs."
-    return render_template("gpa_jinja.html", s_name= s_name, subjects= subjects, credits= credits, grades= grades,
+    return render_template("gpa_jinja.html", subjects= subjects, credits= credits, grades= grades,
         total_credits= total_credits, total_sum= total_sum, final_gpa= final_gpa, comment= comment)
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
