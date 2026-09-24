@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/gpa.css')}}">
 </head>
 <body>
-    <div class="profile">
-        <form action="/info" method="POST">
-            <h1>GPA DETAILS</h1>
-            <div class="student">
-
-                <label>Enter your name:</label>
-                <input type="text" name="s_name">
+    <hr>
+    <h1>GPA CALCULATOR</h1>
+    <p class="intro">
+        Calculate your GPA or CGPA instantly with precision. This streamlined tool is designed to eliminate manual math
+        mistakes, giving you accurate results within seconds so you can stay on top of your academic goals.
+    </p>
+    <div class="gpa-card">
+        <div class="profile">
+            <form action="/info" method="POST">
                 <table>
                     <thead>
                         <tr>
@@ -21,13 +23,14 @@
                             <th>Grades</th>
                             <th></th>
                         </tr>
-                    </thead>     
+                    </thead>
                     <tbody id="table-body">
                         <tr>
                             <td><input type="text" name="subject"></td>
                             <td><input type="number" name="credit_hour" class="cr-input"></td>
                             <td>
-                                <select name="grade" id="grade">
+                                <select name="grade" id="grade" class="grd-input">
+                                    <option>-</option>
                                     <option value="A+">A+</option>
                                     <option value="A">A</option>
                                     <option value="A-">A-</option>
@@ -46,8 +49,9 @@
                             <td><input type="text" name="subject"></td>
                             <td><input type="number" name="credit_hour" class="cr-input"></td>
                             <td>
-                                
-                                <select name="grade" id="grade">
+            
+                                <select name="grade" id="grade" class="grd-input">
+                                    <option>-</option>
                                     <option value="A+">A+</option>
                                     <option value="A">A</option>
                                     <option value="A-">A-</option>
@@ -64,11 +68,12 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            <button type="submit">Calculate_Gpa</button>
-            <button type="button" id="add">Add_row</button>
-            <script src="{{url_for('static', filename= 'script/gpa_script.js')}}" defer></script>
-        </form>
-    </div>
+                <button type="submit" class="calc-btn">Calculate_Gpa</button>
+                <button type="button" id="add" class="add-btn">Add_row</button>
+                <script src="{{url_for('static', filename= 'script/gpa_script.js')}}" defer></script>
+            </form>
+        </div>
+    </div> 
+    
 </body>
 </html>
