@@ -11,7 +11,7 @@ A simple GPA Calculator built with **Python (Flask), HTML, CSS, and JavaScript**
 * Show a GPA-based performance comment
 * Input validation and error handling
 
-## Programming languages/ technologies used
+## Programming languages/technologies used
 
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 
@@ -32,9 +32,13 @@ GPA-Calculator/
 │   ├── gpa_input.html
 │   └── gpa_jinja.html
 ├── static/
-│   ├── style.css
-│   └── script.js
+    ├── css/                
+       └── gpa.css
+       └── gpa_view.css
+    ├── script/
+       └── gpa_script.js
 └── README.md
+└── requirements.txt
 ```
 
 ## How It Works
