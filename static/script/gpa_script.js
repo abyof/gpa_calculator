@@ -26,9 +26,10 @@ button.addEventListener("click", function(){
     input_3.name = "grade";
     input_3.classList.add("grd-input")
     
-    const grades = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"]
+    const grades = ["-", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"]
     grades.forEach(function(gradevalue){
         const option = document.createElement("option");
+        
         option.type = gradevalue;
         option.textContent = gradevalue;
         input_3.appendChild(option);
@@ -44,7 +45,7 @@ button.addEventListener("click", function(){
     cell_3.appendChild(input_3);
 
     removeButton.type= "button";
-    removeButton.textContent= "Remove_row";
+    removeButton.textContent= "-";
 
     row.appendChild(removeCell);
     removeCell.appendChild(removeButton);
