@@ -4,33 +4,44 @@
         padding: 30px;
         box-shadow: 0 0 39px blue;
         border-radius: 29px;
-        background-size: cover;
+        box-sizing: border-box;
+    }
+    .head {
+        font-size: 0.8rem;
+    }
+    .sub {
+        font-size: 0.8rem;
+        font-weight: bold;
+        font-family:'Times New Roman', Times, serif;
+    }
+    .cr{
+        font-size: 0.8rem;
+        font-weight: bolder;
+    }
+    .gr{
+        font-size: 0.8rem;
+        font-weight: bolder;
     }
 }
-@media (max-width: 300px) {
-    .gpa {
-            margin: auto;
-            padding: 30px;
-            box-shadow: 0 0 20px rgb(5, 73, 5);
-            border-radius: 50px;
-        }
-}
 
-.sub{
-    font-size: 14px;
-    font-weight: bold;
-}
+.gpa {
+        margin: auto;
+        padding: 30px;
+    }
+
+
 button{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-table{
-    width: 50%;
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
+table, th, td{
+    border: 1px solid black;
+    border-color: white;
+    border-collapse: collapse;
+    padding: 4px;
+    background-color: black;
 }
 .back-btn {
     font-weight: bolder;
@@ -38,4 +49,22 @@ table{
     padding: 10px 13px;
     border-radius: 10px;
     
+}
+body{
+    background-image: url("../images/download.jfif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.sub{
+    color: white;
+}
+.cr{
+    color: white;
+}
+.gr{
+    color: white;
+}
+.head{
+    color: white;
 }
