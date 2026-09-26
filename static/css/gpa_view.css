@@ -27,8 +27,17 @@
 .gpa {
         margin: auto;
         padding: 30px;
+        animation-name: effect;
+        animation-duration: 1s;
     }
-
+    @keyframes effect {
+        from {
+            transform: scale(0);
+        }
+        to{
+            transform: scale(1.0);
+        }
+    }
 
 button{
     display: flex;
@@ -42,6 +51,16 @@ table, th, td{
     border-collapse: collapse;
     padding: 4px;
     background-color: black;
+    animation-name: result;
+    animation-duration: 1s;
+}
+@keyframes result{
+    from{
+        transform: scale(0);
+    }
+    to{
+        tranform: scale(1.1);
+    }
 }
 .back-btn {
     font-weight: bolder;
