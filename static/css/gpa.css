@@ -6,6 +6,9 @@
             padding: 20px;
             box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.1);
     }
+    .gpa-head {
+        color: azure;
+    }
 }
 
 @media (max-width: 400px){
@@ -13,7 +16,6 @@
         font-size: 0.8rem;
     }
 }
-
 .cr-input {
     width: 70px;
 }
@@ -46,19 +48,27 @@ input:focus{
     padding: 10px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bolder;
-    background-color: rgba(12, 241, 69, 0.795);
+    background-color: #07b9ff;
     font-size: 0.8rem;
     border: none;
+    transition: transform 0.1s ;
+}
+.calc-btn:active {
+    transform: scale(0.8);
 }
 .add-btn {
     border-radius: 3px;
     padding: 3px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bolder;
-    
+    transition: transform 7s;
     font-size: 0.8rem;
     box-shadow: 0 0 10px rgb(5, 73, 5);
     border: none;
+    transition: transform 0.1s ease;
+}
+.add-btn:active{
+    transform: scale(0.5);
 }
 .intro{
     background-color: rgba(0, 0, 0, 0.548);
@@ -75,4 +85,5 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     backface-visibility: hidden;
+
 }
