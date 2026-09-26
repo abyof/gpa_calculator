@@ -1,0 +1,1 @@
+web: gunicorn gpa_flask:app

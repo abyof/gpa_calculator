@@ -7,12 +7,12 @@
 </head>
 <body>
     <div class="show">
-        <h2>GPA_INFORMATION</h2>
+        <div><h2>Result</h2></div>
         <table>
             <tr>
-                <th>Subjects:</th>
-                <th>Credit_hours:</th>
-                <th>Grades:</th>
+                <th class="head">Subjects</th>
+                <th class="head">Credit_hours</th>
+                <th class="head">Grades</th>
             </tr>
             {% for subject in subjects %}
             <tr>
@@ -29,10 +29,21 @@
             {% endfor %}
         </table>
         <div class="gpa">
-            <h3>Total_credits: {{total_credits}}</h3>
-            <h3>Total_sum: {{total_sum}}</h3>
-            <h3>Final_gpa: {{final_gpa}}</h3>
-            <h3>Comment: {{comment}}</h3>
+            <ul>
+                <li>
+                    <h3>Total_credits: {{total_credits}}</h3>
+                </li>
+                <li>
+                    <h3>Total_sum: {{total_sum}}</h3>
+                </li>
+                <li>
+                    <h3>Final_gpa: {{final_gpa}}</h3>
+                </li>
+                <li>
+                    <h3>Comment: {{comment}}</h3>
+                </li>
+            </ul>
+            
         </div>
         <button type="button" class="back-btn" onclick="history.back()">Go back</button>
     </div>
